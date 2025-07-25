@@ -6,6 +6,11 @@ function App() {
 
   function toggle() {
     setVisible(!visible);
+    chrome.cookies.getAll({
+      url: 'https://developer.mozilla.org/*',
+    }).then((cookies) => {
+      console.log(cookies);
+    });
   }
 
   return (
